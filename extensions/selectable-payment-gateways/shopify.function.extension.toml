@@ -1,0 +1,11 @@
+name = "selectable-payment-gateways"
+type = "payment_customization"
+api_version = "2023-04"
+
+[build]
+command = "cargo wasi build --release"
+path = "target/wasm32-wasi/release/selectable-payment-gateways.wasm"
+
+[ui.paths]
+create = "/"
+details = "/"

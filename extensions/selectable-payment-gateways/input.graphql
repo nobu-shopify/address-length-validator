@@ -1,0 +1,7 @@
+query Input {
+  paymentCustomization {
+    metafield(namespace: "$app:selectable-payment-gateways", key: "function-configuration") {
+      value
+    }
+  }
+}
