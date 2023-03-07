@@ -4,12 +4,13 @@ import {
   Banner,
   BlockStack,
   Checkbox,
-  useAttributes,
-  useApplyAttributeChange,
+  // useAttributes,
+  // useApplyAttributeChange,
   useBuyerJourneyIntercept,
   useExtensionApi,
   useExtensionCapability,
   useShippingAddress,
+  // useTimezone,
 } from '@shopify/checkout-ui-extensions-react';
 
 render('Checkout::Dynamic::Render', () => <App />);
@@ -22,6 +23,8 @@ function App() {
     setChecked(!isGift);
     console.log("isGift", isGift);
   };
+
+/*  
   const applyAttributeChange = useApplyAttributeChange();
   const attributeUpdate = () => { 
     applyAttributeChange({
@@ -31,7 +34,7 @@ function App() {
     const attribute = useAttributes();
     console.log("attribute", attribute);
   };
-
+*/
 
 
   // Address validator
