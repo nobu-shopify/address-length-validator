@@ -8,4 +8,9 @@ query Input {
     id
     name
   }
+  cart{
+    attribute(key: "browser_country") {
+      value
+    }  
+  }
 }

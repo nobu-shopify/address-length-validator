@@ -16,11 +16,20 @@ generate_types!(
 fn function(input: input::ResponseData) -> Result<output::FunctionResult> {
     let no_changes = output::FunctionResult { operations: vec![] };
 
+    // Get country from cart attribute
+    // Default is "Japan"
+    let browser_country = match input.cart.attribute {
+        Some(attribute) => attribute.value,
+        None => Some("Japan".to_string()),
+    };
+    eprintln!("Country: {:?}", browser_country);
+
     // Get country isoCode
-    let country_code = input.localization.country.iso_code;
+    // let country_code = input.localization.country.iso_code;
 
     // No change if country is Japan
-    if country_code == input::CountryCode::JP {
+    //if country_code == input::CountryCode::JP {
+    if browser_country == Some("Japan".to_string()) {
         eprintln!("Country is Japan, no need to hide the payment method.");
         return Ok(no_changes);
     }
